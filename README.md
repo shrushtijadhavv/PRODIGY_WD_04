@@ -64,9 +64,9 @@ This is a static website that can be deployed on any web hosting service:
 - Vercel
 - Any traditional web hosting
 
-## License
+## Live Demo
 
-This project is open source and available under the [MIT License](LICENSE).
+Link : https://shrushtijadhavv.github.io/PRODIGY_WD_04/
 
 ## Acknowledgements
 
