@@ -1,4 +1,4 @@
-# Personal Portfolio Website
+# PRODIGY_WD_04 - Personal Portfolio Website
 
 A modern, responsive personal portfolio website built with HTML, CSS, and JavaScript to showcase your skills, projects, and professional experience as a web developer.
 
@@ -76,4 +76,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-Feel free to customize this portfolio to make it your own and showcase your unique skills and projects! 
+Feel free to customize this portfolio to make it your own and showcase your unique skills and projects!
