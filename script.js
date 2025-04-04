@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Form submission
+    // Form submission with EmailJS
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
@@ -135,10 +135,40 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // In a real application, you would send the form data to a server here
-            // For this demo, we'll just show a success message
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
+            // Show loading state
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Prepare email data
+            const emailData = {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            };
+            
+            // Send email using EmailJS
+            emailjs.send('service_email', 'template_contact', emailData)
+                .then(function() {
+                    // Success message
+                    alert('Thank you for your message! I will get back to you soon.');
+                    contactForm.reset();
+                    
+                    // Reset button
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.disabled = false;
+                })
+                .catch(function(error) {
+                    // Error message
+                    console.error('Email send failed:', error);
+                    alert('Sorry, there was a problem sending your message. Please try again later.');
+                    
+                    // Reset button
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.disabled = false;
+                });
         });
     }
     
